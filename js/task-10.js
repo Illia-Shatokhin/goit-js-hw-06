@@ -35,4 +35,5 @@ function destroyBoxes() {
   boxContainer.innerHTML = "";
   width = 30;
   height = 30;
+  controlsContainer.firstElementChild.value = "";
 };
