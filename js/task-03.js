@@ -13,12 +13,12 @@ const images = [
   },
 ];
 
-const listContainet = document.querySelector(".gallery")
+const list = document.querySelector(".gallery");
+list.style.display = "flex";
+list.style.listStyle = "none";
+list.style.justifyContent = "space-evenly";
+let str = "";
 images.forEach(({url, alt}) => {
-  const item = document.createElement("li");
-  listContainet.appendChild(item)
-  const img = document.createElement("img");
-  img.setAttribute("src", url);
-  img.setAttribute("alt", alt);
-  listContainet.lastElementChild.appendChild(img);
+  str += `<li><img src="${url}" alt="${alt}" width="290"></li>`
 });
+list.insertAdjacentHTML("afterbegin", str);
