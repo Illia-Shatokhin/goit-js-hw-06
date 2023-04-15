@@ -14,6 +14,8 @@ let height = 30;
 
 controlsContainer.firstElementChild.addEventListener("input", () => {
   inputValue = Number(controlsContainer.firstElementChild.value);
+  width = 30;
+  height = 30;
 });
 controlsContainer.children[1].addEventListener("click", () => createBoxes(inputValue));
 controlsContainer.lastElementChild.addEventListener("click", () => destroyBoxes());
@@ -24,10 +26,10 @@ function createBoxes(amount) {
   let str = "";
   for (let i = 0; i < amount; i++) {
     const hexColor = getRandomHexColor();
-    str += `<div style="background-color: ${hexColor}; width: ${width}px; height: ${height}px;">a</div>`;
+    str += `<div style="background-color: ${hexColor}; width: ${width}px; height: ${height}px;"></div>`;
     width += 10;
     height += 10;
-  }
+  };
   boxContainer.insertAdjacentHTML("beforeend", str);
 };
 

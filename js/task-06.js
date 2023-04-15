@@ -10,5 +10,7 @@ validationInput.addEventListener("blur", (event) => {
 
 validationInput.addEventListener("focus", (event) => {
     const className = validationInput.classList.value;
-    validationInput.classList.remove(className);
+    if (className !== "") {
+        validationInput.classList.remove(className);
+    };
 });

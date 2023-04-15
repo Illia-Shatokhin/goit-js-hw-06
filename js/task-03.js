@@ -17,8 +17,14 @@ const list = document.querySelector(".gallery");
 list.style.display = "flex";
 list.style.listStyle = "none";
 list.style.justifyContent = "space-evenly";
-let str = "";
-images.forEach(({url, alt}) => {
-  str += `<li><img src="${url}" alt="${alt}" width="290"></li>`
-});
+let str = images
+  .map(({url, alt}) => `<li><img src="${url}" alt="${alt}" width="290"></li>`)
+  .join(",");
 list.insertAdjacentHTML("afterbegin", str);
+
+
+// let str = "";
+// images.forEach(({url, alt}) => {
+//   str += `<li><img src="${url}" alt="${alt}" width="290"></li>`
+// });
+// list.insertAdjacentHTML("afterbegin", str);
